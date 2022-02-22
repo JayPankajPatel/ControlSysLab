@@ -1,3 +1,4 @@
+clc; clear; 
 J = 0.01; % J is derived from Newton's 2nd Law equation 
 b = 0.1;% b is derived from Newton's 2nd Law equation 
 K = 0.01;% J is derived from Newton's 2nd Law equation
@@ -8,10 +9,11 @@ R = 1; %derived from Kirchoff (Resistor)
 L = 0.5;%derived from Kirchoff (inductor)
 s = tf('s')%transfer function
 P_motor = K/((J*s+b)*(L*s+R)+K^2)
-x = step(P_motor)
+x = step(P_motor); 
 hold on
-plot(x)
+plot(x,'green')
 
-x2 = P_motor/(1+P_motor)
-x2 = step(x2)
-plot(x2)
+%x2 = P_motor/(1+P_motor)
+x2 = feedback(P_motor,1)
+x2 = step(x2);
+plot(x2,'blue')
