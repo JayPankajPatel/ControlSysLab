@@ -19,3 +19,6 @@ x2 = feedback(P_motor,1)
 x2 = step(x2);
 plot(x2,'blue')
 
+legend('Open Loop', 'Closed Loop')
+title('Open Loop and Closed Loop Comparison')
+
