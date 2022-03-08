@@ -8,8 +8,8 @@ K = 0.01;   % J is derived from Newton's 2nd Law equation, electromotive force c
 R = 1;                      %derived from Kirchoff (Resistor)
 L = 0.5;                    %derived from Kirchoff (Inductor)
 
-num = [.01]                 % Coefficents of Transfer Function
-denom =[0.005 0.06 .1001]   %
+num = [.01];                % Coefficents of Transfer Function
+denom =[0.005 0.06 .1001];  %
 P_motor = tf(num,denom)     % Open Loop Transfer Function
 
 %x2 = P_motor/(1+P_motor)   % Equation Implementation of Feedback loop
